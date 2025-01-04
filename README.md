@@ -23,5 +23,5 @@ Ensure you have the following installed:
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/vue3-tailwind-ts-starter-template.git
+git clone https://github.com/oburakergen/vue3-tailwind-ts-starter-template.git
 cd vue3-tailwind-ts-starter-template
