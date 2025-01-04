@@ -1,33 +1,32 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
 const forms = require('@tailwindcss/forms')
-  /** @type {import('tailwindcss').Config} */
+const typography = require('@tailwindcss/typography')
+
+/** @type {import('tailwindcss').Config} */
 export default {
-    darkMode: 'media',
-    content: [
-    './index.html',
-    './src/**/*.{vue,js,ts}',
-  ],
+  darkMode: 'media',
+  content: ['./index.html', './src/**/*.{vue,js,ts}'],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['"Source Sans Pro"', 'sans-serif'],
+        variable: ['"Open Sans"', 'sans-serif'],
+      },
       colors: {
         button: {
-          primary: '#fca311',
-          secondary: '#e5e5e5',
+          primary: 'var(--color-primary)',
+          secondary: 'var(--color-secondary)',
         },
         navbar: {
-          primary: '#14213d',
-        }
+          primary: 'var(--color-navbar-primary)',
+        },
       },
       borderRadius: {
-        xl: "calc(var(--radius) + 4px)",
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        xl: 'calc(var(--radius) + 4px)',
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
       },
     },
   },
-  plugins: [
-    forms,
-  ],
+  plugins: [forms, typography],
 }
-

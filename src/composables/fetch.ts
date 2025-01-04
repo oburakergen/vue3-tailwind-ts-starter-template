@@ -11,7 +11,6 @@ export function useFetch<T>(url: string) {
     loading.value = true
     try {
       data.value = await api.post(url)
-
     } catch (err) {
       if (err instanceof Error) {
         error.value = err.message

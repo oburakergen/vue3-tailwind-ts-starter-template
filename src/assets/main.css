@@ -6,5 +6,14 @@
     :root {
         --color-primary: #f3c614;
         --color-secondary: #e5e5e5;
+        --color-blue: #14213d;
+        --color-white: #ffffff;
+        --color-black: #000000;
+
+        --color-navbar-primary: var(--color-blue);
+        --radius: 0.25rem;
+
+        --title-font-family: 'Source Sans Pro', sans-serif;
+        --text-font-family: 'Open Sans Variable', sans-serif;
     }
 }

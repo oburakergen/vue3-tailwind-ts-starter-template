@@ -1,6 +1,6 @@
-import CryptoJS from 'crypto-js';
+import CryptoJS from 'crypto-js'
 
-const SECRET_KEY = import.meta.env.VITE_SECRET_KEY as string;
+const SECRET_KEY = import.meta.env.VITE_SECRET_KEY as string
 
 /**
  * AES ile metni şifreler
@@ -9,7 +9,7 @@ const SECRET_KEY = import.meta.env.VITE_SECRET_KEY as string;
  * @returns Şifrelenmiş metin
  */
 export function encrypt(text: string, key: string = SECRET_KEY): string {
-  return CryptoJS.AES.encrypt(text, key).toString();
+  return CryptoJS.AES.encrypt(text, key).toString()
 }
 
 /**
@@ -20,10 +20,10 @@ export function encrypt(text: string, key: string = SECRET_KEY): string {
  */
 export function decrypt(cipherText: string, key: string = SECRET_KEY): string | null {
   try {
-    const bytes = CryptoJS.AES.decrypt(cipherText, key);
-    return bytes.toString(CryptoJS.enc.Utf8);
+    const bytes = CryptoJS.AES.decrypt(cipherText, key)
+    return bytes.toString(CryptoJS.enc.Utf8)
   } catch (error) {
-    console.error('Decryption failed:', error);
-    return null;
+    console.error('Decryption failed:', error)
+    return null
   }
 }

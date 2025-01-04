@@ -1,25 +1,31 @@
-import pluginVue from 'eslint-plugin-vue'
-import vueTsEslintConfig from '@vue/eslint-config-typescript'
-import pluginPlaywright from 'eslint-plugin-playwright'
-import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
+import eslintPluginVue from 'eslint-plugin-vue'
+import eslintPluginPrettier from 'eslint-plugin-prettier'
+import eslintPluginTypeScript from '@typescript-eslint/eslint-plugin'
+import parserTs from '@typescript-eslint/parser';
+import parserVue from 'vue-eslint-parser';
 
 export default [
   {
-    name: 'app/files-to-lint',
-    files: ['**/*.{ts,mts,tsx,vue}'],
+    ignores: ['node_modules/**', 'dist/**', '.idea/**', '.vscode/**', ''],
   },
-
   {
-    name: 'app/files-to-ignore',
-    ignores: ['**/dist/**', '**/dist-ssr/**', '**/coverage/**'],
+    files: ['**/*.ts', '**/*.vue'],
+    plugins: {
+      vue: eslintPluginVue,
+      prettier: eslintPluginPrettier,
+      '@typescript-eslint': eslintPluginTypeScript,
+    },
+    languageOptions: {
+      parser: parserVue,
+      parserOptions: {
+        parser: parserTs,
+        ecmaVersion: 2018,
+      },
+    },
+    rules: {
+      'prettier/prettier': 'error',
+      'vue/multi-word-component-names': 'off',
+      '@typescript-eslint/no-unused-vars': 'error',
+    },
   },
-
-  ...pluginVue.configs['flat/essential'],
-  ...vueTsEslintConfig(),
-  
-  {
-    ...pluginPlaywright.configs['flat/recommended'],
-    files: ['e2e/**/*.{test,spec}.{js,ts,jsx,tsx}'],
-  },
-  skipFormatting,
 ]

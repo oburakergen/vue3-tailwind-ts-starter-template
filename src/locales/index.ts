@@ -11,36 +11,46 @@ const i18n = createI18n({
   numberFormats: {
     'tr-TR': {
       currency: {
-        style: 'currency', currency: 'TRY', notation: 'standard'
+        style: 'currency',
+        currency: 'TRY',
+        notation: 'standard',
       },
       decimal: {
-        style: 'decimal', minimumFractionDigits: 2, maximumFractionDigits: 2
+        style: 'decimal',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
       },
       percent: {
-        style: 'percent', useGrouping: false
-      }
+        style: 'percent',
+        useGrouping: false,
+      },
     },
     'en-US': {
       currency: {
-        style: 'currency', currency: 'USD', notation: 'standard'
+        style: 'currency',
+        currency: 'USD',
+        notation: 'standard',
       },
       decimal: {
-        style: 'decimal', minimumFractionDigits: 2, maximumFractionDigits: 2
+        style: 'decimal',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
       },
       percent: {
-        style: 'percent', useGrouping: false
-      }
-    }
+        style: 'percent',
+        useGrouping: false,
+      },
+    },
   },
   messages: {
     'tr-TR': trTR,
-    'en-US': enUS
+    'en-US': enUS,
   },
   devtools: !import.meta.env.PROD,
   missing: (locale, key) => {
     console.error(`i18n :: missing key: ${key}`)
     return key
-  }
+  },
 })
 
 export default i18n

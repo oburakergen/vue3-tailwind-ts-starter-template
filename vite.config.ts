@@ -6,10 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
-  plugins: [
-    vue(),
-    vueDevTools(),
-  ],
+  plugins: [vue(), vueDevTools()],
   appType: 'spa',
   build: {
     minify: 'terser',
@@ -18,8 +15,8 @@ export default defineConfig(({ mode }) => ({
         manualChunks: {
           vue: ['vue'],
           'vue-router': ['vue-router'],
-          'pinia': ['pinia'],
-          'axios': ['axios'],
+          pinia: ['pinia'],
+          axios: ['axios'],
           'crypto-js': ['crypto-js'],
         },
       },
@@ -27,7 +24,7 @@ export default defineConfig(({ mode }) => ({
     terserOptions: {
       compress: {
         drop_console: true,
-        drop_debugger: true
+        drop_debugger: true,
       },
       format: {
         comments: false,
@@ -39,7 +36,7 @@ export default defineConfig(({ mode }) => ({
   },
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-}));
+}))
