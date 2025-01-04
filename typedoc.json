@@ -1,0 +1,11 @@
+{
+  "entryPoints": ["src"],
+  "out": "docs",
+  "plugin": ["typedoc-plugin-vue"],
+  "includeVersion": true,
+  "tsconfig": "tsconfig.json",
+  "exclude": ["node_modules", "**/*.test.ts", "**/*.spec.ts"],
+  "hideGenerator": true,
+  "name": "My Vue Project",
+  "excludeExternals": true
+}
